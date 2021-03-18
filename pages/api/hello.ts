@@ -1,6 +1,8 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next"
+import nc from "next-connect"
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({ name: 'John Doe' })
-}
+const handler = nc().get((req: NextApiRequest, res: NextApiResponse) => {
+  res.status(200).json({ name: "John Doe" })
+})
+
+export default handler
